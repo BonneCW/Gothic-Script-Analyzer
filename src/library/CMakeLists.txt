@@ -3,8 +3,18 @@ SET(includedir ${CMAKE_SOURCE_DIR}/include)
 
 INCLUDE_DIRECTORIES(${includedir})
 
-SET(ScriptAnalyzerSrc
-	${srcdir}/ModuleInterface.cpp
+SET(ScriptAnalyzerHeader
+	${includedir}/gsa/library/CheckResult.h
+
+	${includedir}/gsa/library/modules/interfaces/LineBasedModuleInterface.h
+	${includedir}/gsa/library/modules/interfaces/ModuleInterface.h
 )
 
-ADD_LIBRARY(ScriptAnalyzer SHARED ${ScriptAnalyzerSrc})
+SET(ScriptAnalyzerSrc
+	${srcdir}/modules/interfaces/LineBasedModuleInterface.cpp
+	${srcdir}/modules/interfaces/ModuleInterface.cpp
+)
+
+ADD_LIBRARY(ScriptAnalyzer SHARED ${ScriptAnalyzerSrc} ${ScriptAnalyzerHeader})
+
+TARGET_LINK_LIBRARIES(ScriptAnalyzer ${QT_LIBRARIES})
