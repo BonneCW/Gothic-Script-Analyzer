@@ -5,7 +5,12 @@ namespace gsa {
 namespace library {
 
 	enum Module {
-	}
+		None = 0,
+
+		AIOutput = 1 << 0,
+
+		All = (1 << 1) - 1
+	};
 
 } /* namespace library */
 } /* namespace gsa */

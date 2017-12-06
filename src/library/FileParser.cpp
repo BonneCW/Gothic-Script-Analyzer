@@ -31,7 +31,10 @@ namespace library {
 			while (!inStream.atEnd()) {
 				QString line = inStream.readLine();
 				for (LineBasedModuleInterface * lineBasedModule : _lineBasedModules) {
-					results.append(lineBasedModule->checkLine(line));
+					CheckResult result = lineBasedModule->checkLine(line);
+					if (!result.success) {
+						results.append(result);
+					}
 				}
 			}
 		}

@@ -22,4 +22,5 @@ IF(WIN32)
 	add_custom_command(TARGET UnitTester POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_BINARY_DIR}/bin/$<CONFIGURATION>/UnitTester.exe ${CMAKE_BINARY_DIR}/bin)
 ENDIF(WIN32)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/resources/AIOutputModule.d ${CMAKE_BINARY_DIR}/bin/tests/AIOutputModule.d COPYONLY)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/resources/FileParser_LineBased.d ${CMAKE_BINARY_DIR}/bin/tests/FileParser_LineBased.d COPYONLY)

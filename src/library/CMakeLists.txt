@@ -8,7 +8,9 @@ SET(ScriptAnalyzerHeader
 	
 	${includedir}/gsa/library/CheckResult.h
 	${includedir}/gsa/library/FileParser.h
-
+	${includedir}/gsa/library/SeverityLevel.h
+	
+	${includedir}/gsa/library/modules/AIOutputModule.h
 	${includedir}/gsa/library/modules/Modules.h
 	
 	${includedir}/gsa/library/modules/interfaces/FunctionBasedModuleInterface.h
@@ -18,6 +20,8 @@ SET(ScriptAnalyzerHeader
 
 SET(ScriptAnalyzerSrc
 	${srcdir}/FileParser.cpp
+
+	${srcdir}/modules/AIOutputModule.cpp
 
 	${srcdir}/modules/interfaces/FunctionBasedModuleInterface.cpp
 	${srcdir}/modules/interfaces/LineBasedModuleInterface.cpp
